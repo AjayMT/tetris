@@ -22,8 +22,9 @@ class Block:
             if not b: continue
 
             xywh = (ix + (x * self.w), iy + (y * self.w), self.w, self.w)
+            border = tuple([x * 0.75 for x in self.color])
             pygame.draw.rect(screen, self.color, xywh)
-            pygame.draw.rect(screen, (255, 255, 255), xywh, 1)
+            pygame.draw.rect(screen, border, xywh, 2)
 
 
 class Tetris(PygameHelper):
